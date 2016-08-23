@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  mongodb:
+    build: docker/mongo
+    container_name: kudos_mongodb
+    image: kudos_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - /Volumes/mongodb:/data
+      - /Volumes/work:/work
+    command: --config /conf/mongod.conf
+
